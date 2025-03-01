@@ -10,58 +10,49 @@
 
     <!-- Carrossel de Produtos -->
     <div class="swiper">
-      <div class="swiper-wrapper">
-        <!-- Produto 1 -->
-        <div class="swiper-slide">
-          <div class="product-card">
-            <img ngSrc="caneca1-frente.jpg" alt="Caneca Não Coma Vidro" width="250" height="312" priority (click)="openModal('caneca1-frente.jpg')">
-            <span class="new-tag">Novo</span>
-            <h3>Caneca Não Coma Vidro</h3>
-            <p>Caneca de porcelana Capacidade de 350ml Altura de 9,7cm</p>
-            <span class="price">R$ 29,99</span>
-            <btn-primary btn-text="Comprar"></btn-primary>
-          </div>
-        </div>
-        <!-- Produto 2 -->
-        <div class="swiper-slide">
-          <div class="product-card">
-            <img ngSrc="caneca2-frente.jpg" alt="Caneca Buldogue de Engels" width="250" height="312" priority (click)="openModal('caneca2-frente.jpg')">
-            <span class="new-tag">Novo</span>
-            <h3>Caneca Buldogue de Engels</h3>
-            <p>Caneca de porcelana Capacidade de 350ml Altura de 9,7cm.</p>
-            <span class="price">R$ 34,99</span>
-            <btn-primary btn-text="Comprar"></btn-primary>
-          </div>
-        </div>
-        <!-- Produto 3 -->
-        <div class="swiper-slide">
-          <div class="product-card">
-            <img ngSrc="caneca3-frente.jpg" alt="Caneca Mars" width="250" height="312" priority (click)="openModal('caneca3-frente.jpg')">
-            <span class="new-tag">Novo</span>
-            <h3>Caneca Sapo Materialista</h3>
-            <p>Caneca de porcelana Capacidade de 350ml Altura de 9,7cm.</p>
-            <span class="price">R$ 39,99</span>
-            <btn-primary btn-text="Comprar"></btn-primary>
-          </div>
-        </div>
+  <div class="swiper-wrapper">
+    <!-- Slide 1 -->
+    <div class="swiper-slide">
+      <div class="swiper-zoom-container"> <!-- Contêiner do zoom -->
+        <img ngSrc="caneca1-frente.jpg" alt="Caneca Não Coma Vidro" width="250" height="312" priority (click)="openModal('caneca1-frente.jpg')">
       </div>
-      <!-- Navegação -->
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-pagination"></div>
+      <span class="new-tag">Novo</span>
+      <h3>Caneca Não Coma Vidro</h3>
+      <p>Caneca de porcelana Capacidade de 350ml Altura de 9,7cm</p>
+      <span class="price">R$ 29,99</span>
+      <btn-primary btn-text="Comprar"></btn-primary>
     </div>
+    <!-- Slide 2 -->
+    <div class="swiper-slide">
+      <div class="swiper-zoom-container"> <!-- Contêiner do zoom -->
+        <img ngSrc="caneca2-frente.jpg" alt="Caneca Buldogue de Engels" width="250" height="312" priority (click)="openModal('caneca2-frente.jpg')">
+      </div>
+      <span class="new-tag">Novo</span>
+      <h3>Caneca Buldogue de Engels</h3>
+      <p>Caneca de porcelana Capacidade de 350ml Altura de 9,7cm.</p>
+      <span class="price">R$ 34,99</span>
+      <btn-primary btn-text="Comprar"></btn-primary>
+    </div>
+    <!-- Slide 3 -->
+    <div class="swiper-slide">
+      <div class="swiper-zoom-container"> <!-- Contêiner do zoom -->
+        <img ngSrc="caneca3-frente.jpg" alt="Caneca Mars" width="250" height="312" priority (click)="openModal('caneca3-frente.jpg')">
+      </div>
+      <span class="new-tag">Novo</span>
+      <h3>Caneca Sapo Materialista</h3>
+      <p>Caneca de porcelana Capacidade de 350ml Altura de 9,7cm.</p>
+      <span class="price">R$ 39,99</span>
+      <btn-primary btn-text="Comprar"></btn-primary>
+    </div>
+  </div>
+  <!-- Botões de navegação -->
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+  <!-- Paginação -->
+  <div class="swiper-pagination"></div>
+</div>
   </section>
   <!-- Formulário de Interesse -->
-
-  <!-- Modal para ampliar a imagem -->
-  @if (selectedImage) {
-    <div class="modal">
-      <div class="modal-content">
-        <span class="close" (click)="closeModal()">&times;</span>
-        <img [src]="selectedImage" alt="Imagem ampliada" class="modal-image">
-      </div>
-    </div>
-  }
   <email-form></email-form>
   <app-footer></app-footer>
 </main>
