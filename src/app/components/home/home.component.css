@@ -67,11 +67,9 @@ main {
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-.swiper {
-  width: 100%; /* Ocupa toda a largura disponível */
-  max-width: 800px; /* Aumente o tamanho máximo se necessário */
-  position: relative;
-  margin: 0 auto; /* Centraliza o carrossel na página */
+.swiper-container {
+  width: 100%;
+  height: auto;
 }
 
 .swiper-wrapper {
