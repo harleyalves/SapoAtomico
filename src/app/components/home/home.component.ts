@@ -1,20 +1,20 @@
-import { Component, AfterViewInit, Inject, HostListener } from '@angular/core';
-import { NgOptimizedImage, CommonModule, isPlatformBrowser } from '@angular/common';
+import { Component, AfterViewInit, Inject } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { HeaderComponent } from "../header/header.component";
 import { BtnPrimaryComponent } from '../btn-primary/btn-primary.component';
 import Swiper from 'swiper';
-import { Navigation, Pagination, Autoplay } from 'swiper/modules'; // Adicionado Autoplay
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/autoplay'; // Adicionado CSS do Autoplay
+import { Navigation, Pagination, Autoplay } from 'swiper/modules'; // Módulos do Swiper
+import 'swiper/css'; // CSS base do Swiper
+import 'swiper/css/navigation'; // CSS das setas de navegação
+import 'swiper/css/pagination'; // CSS da paginação
+import 'swiper/css/autoplay'; // CSS do autoplay
 import { EmailFormComponent } from '../email-form/email-form.component';
 import { FooterComponent } from '../footer/footer.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [HeaderComponent, NgOptimizedImage, CommonModule, BtnPrimaryComponent, EmailFormComponent, FooterComponent],
+  imports: [HeaderComponent, CommonModule, BtnPrimaryComponent, EmailFormComponent, FooterComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
@@ -26,7 +26,7 @@ export class HomeComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     if (isPlatformBrowser(this.platformId)) {
       new Swiper('.swiper', {
-        modules: [Navigation, Pagination, Autoplay], // Adicionado Autoplay
+        modules: [Navigation, Pagination, Autoplay], // Módulos do Swiper
         loop: true,
         navigation: {
           nextEl: '.swiper-button-next',
