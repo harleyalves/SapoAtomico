@@ -153,13 +153,7 @@ main {
   color: #4a90e2; /* Cor da seta */
 }
 
-.swiper-button-next::after {
-  content: 'next'; /* Seta para a direita */
-}
 
-.swiper-button-prev::after {
-  content: 'prev'; /* Seta para a esquerda */
-}
 
 .swiper-button-next {
   right: 10px; /* Posição do botão "next" */
