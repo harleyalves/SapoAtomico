@@ -15,14 +15,15 @@ main {
   padding: 40px 70px;
   color: white;
   text-align: justify;
-  flex-direction: column;
-  gap: 20px;
+  flex-direction: column; /* Empilhado por padrão (mobile) */
+  gap: 20px; /* Espaço entre os elementos */
 }
 
 .headline {
   flex: 1;
   color: white;
   text-align: center;
+  max-width: 100%; /* Ocupa toda a largura em mobile */
 }
 
 .headline .tag {
@@ -239,5 +240,23 @@ main {
 
   .product-card img {
     max-height: 200px;
+  }
+}
+
+/* Layout lado a lado para telas maiores */
+@media (min-width: 769px) {
+  .main-section {
+    flex-direction: row; /* Lado a lado */
+    gap: 40px; /* Espaço entre o headline e o swiper */
+    align-items: flex-start; /* Alinha os itens ao topo */
+  }
+
+  .headline {
+    max-width: 40%; /* Define uma largura proporcional para o headline */
+    text-align: left; /* Alinha o texto à esquerda */
+  }
+
+  .swiper {
+    max-width: 60%; /* Define uma largura proporcional para o swiper */
   }
 }
