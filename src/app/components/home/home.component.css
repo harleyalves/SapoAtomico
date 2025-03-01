@@ -241,3 +241,19 @@ main {
     max-height: 200px;
   }
 }
+/* Layout para telas maiores (headline ao lado do carrossel) */
+@media (min-width: 1024px) {
+  .main-section {
+    flex-direction: row; /* Lado a lado */
+    gap: 40px; /* Espaço entre o headline e o carrossel */
+    align-items: flex-start; /* Alinha os itens ao topo */
+  }
+
+  .headline {
+    text-align: left; /* Alinha o texto à esquerda */
+  }
+
+  .swiper {
+    flex: 1; /* O carrossel ocupa o espaço restante */
+  }
+}
