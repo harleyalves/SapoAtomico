@@ -245,8 +245,7 @@ main {
 @media (min-width: 1024px) {
   .main-section {
     flex-direction: row; /* Lado a lado */
-    gap: 40px; /* Espaço entre o headline e o carrossel */
-    align-items: flex-start; /* Alinha os itens ao topo */
+    gap: 100px; /* Espaço entre o headline e o carrossel */
   }
 
   .headline {
