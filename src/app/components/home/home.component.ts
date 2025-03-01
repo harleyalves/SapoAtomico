@@ -1,13 +1,14 @@
-import { Component, AfterViewInit, Inject, PLATFORM_ID } from '@angular/core'; // Adicione PLATFORM_ID aqui
+import { Component, AfterViewInit, Inject, PLATFORM_ID } from '@angular/core';
 import { NgOptimizedImage, CommonModule, isPlatformBrowser } from '@angular/common';
 import { HeaderComponent } from "../header/header.component";
 import { BtnPrimaryComponent } from '../btn-primary/btn-primary.component';
 import Swiper from 'swiper';
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import { Navigation, Pagination, Autoplay, Zoom } from 'swiper/modules'; // Adicione o módulo Zoom
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
+import 'swiper/css/zoom'; // Adicione o CSS do Zoom
 import { EmailFormComponent } from '../email-form/email-form.component';
 import { FooterComponent } from '../footer/footer.component';
 
@@ -21,12 +22,12 @@ import { FooterComponent } from '../footer/footer.component';
 export class HomeComponent implements AfterViewInit {
   selectedImage: string | null = null;
 
-  constructor(@Inject(PLATFORM_ID) private platformId: object) {} // Agora PLATFORM_ID está disponível
+  constructor(@Inject(PLATFORM_ID) private platformId: object) {}
 
   ngAfterViewInit(): void {
     if (isPlatformBrowser(this.platformId)) {
       new Swiper('.swiper', {
-        modules: [Navigation, Pagination, Autoplay],
+        modules: [Navigation, Pagination, Autoplay, Zoom], // Adicione o módulo Zoom
         loop: true,
         navigation: {
           nextEl: '.swiper-button-next',
@@ -40,6 +41,7 @@ export class HomeComponent implements AfterViewInit {
           delay: 3000,
           disableOnInteraction: false,
         },
+        zoom: true, // Habilita o zoom
         slidesPerView: 1,
         spaceBetween: 30,
       });
