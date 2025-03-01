@@ -1,22 +1,22 @@
-import { Component, AfterViewInit, Inject, PLATFORM_ID, HostListener } from '@angular/core';
-import { NgOptimizedImage, CommonModule } from '@angular/common';
+import { Component, AfterViewInit, Inject, HostListener } from '@angular/core';
+import { NgOptimizedImage, CommonModule, isPlatformBrowser } from '@angular/common';
 import { HeaderComponent } from "../header/header.component";
 import { BtnPrimaryComponent } from '../btn-primary/btn-primary.component';
-import { isPlatformBrowser } from '@angular/common';
 import Swiper from 'swiper';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules'; // Adicionado Autoplay
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import 'swiper/css/autoplay'; // Adicionado CSS do Autoplay
 import { EmailFormComponent } from '../email-form/email-form.component';
 import { FooterComponent } from '../footer/footer.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [HeaderComponent, NgOptimizedImage, CommonModule,BtnPrimaryComponent,EmailFormComponent,FooterComponent],
+  imports: [HeaderComponent, NgOptimizedImage, CommonModule, BtnPrimaryComponent, EmailFormComponent, FooterComponent],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements AfterViewInit {
   selectedImage: string | null = null;
@@ -26,7 +26,7 @@ export class HomeComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     if (isPlatformBrowser(this.platformId)) {
       new Swiper('.swiper', {
-        modules: [Navigation, Pagination],
+        modules: [Navigation, Pagination, Autoplay], // Adicionado Autoplay
         loop: true,
         navigation: {
           nextEl: '.swiper-button-next',
@@ -35,6 +35,10 @@ export class HomeComponent implements AfterViewInit {
         pagination: {
           el: '.swiper-pagination',
           clickable: true,
+        },
+        autoplay: {
+          delay: 3000, // Tempo em milissegundos (3 segundos)
+          disableOnInteraction: false, // Continua o autoplay após interação do usuário
         },
         slidesPerView: 1,
         spaceBetween: 30,
