@@ -173,15 +173,6 @@ main {
 .swiper-pagination-bullet-active {
   opacity: 1;
 }
-/* Estilos do contêiner do zoom */
-.swiper-zoom-container {
-  cursor: zoom-in; /* Altera o cursor para indicar que o zoom está disponível */
-}
-
-/* Estilo quando o zoom está ativo */
-.swiper-slide-zoomed {
-  cursor: grab; /* Altera o cursor para indicar que a imagem pode ser arrastada */
-}
 
 /* Responsividade para telas menores */
 @media (max-width: 768px) {
