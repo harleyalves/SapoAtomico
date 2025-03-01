@@ -25,7 +25,7 @@ export class HomeComponent implements AfterViewInit {
 
 ngAfterViewInit(): void {
   if (isPlatformBrowser(this.platformId)) {
-    new Swiper('.swiper', {
+    new Swiper('.swiper-container', {
       modules: [Navigation, Pagination],
       loop: true,
       navigation: {
@@ -37,7 +37,7 @@ ngAfterViewInit(): void {
         clickable: true,
       },
       slidesPerView: 1,  
-      spaceBetween: 0,   
+      spaceBetween: 10,   
     });
   }
 }
