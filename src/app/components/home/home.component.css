@@ -144,20 +144,6 @@ main {
   cursor: pointer;
 }
 
-/* Adiciona a seta para o botão "next" */
-.swiper-button-next::after {
-  content: '→'; /* Seta para a direita */
-  font-size: 20px;
-  font-weight: bold;
-}
-
-/* Adiciona a seta para o botão "prev" */
-.swiper-button-prev::after {
-  content: '←'; /* Seta para a esquerda */
-  font-size: 20px;
-  font-weight: bold;
-}
-
 /* Posicionamento dos botões */
 .swiper-button-next {
   right: 10px;
