@@ -126,33 +126,57 @@ main {
   font-size: 1.3rem;
 }
 
+/* Estilos dos botões de navegação */
 .swiper-button-next, .swiper-button-prev {
-  color: #4a90e2;
-  background: rgba(255, 255, 255, 0.8);
-  padding: 10px;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  position: absolute;
+  top: 50%;
+  width: 50px; /* Aumentei o tamanho */
+  height: 50px;
+  margin-top: -25px; /* Centraliza verticalmente */
+  z-index: 10;
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
-  cursor: pointer;
+  background: linear-gradient(135deg, #4a90e2, #8c7ae6); /* Gradiente moderno */
+  border-radius: 50%; /* Botões redondos */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Sombra mais pronunciada */
+  transition: all 0.3s ease; /* Transição suave */
+}
+
+/* Efeito de hover */
+.swiper-button-next:hover, .swiper-button-prev:hover {
+  transform: scale(1.1); /* Aumenta ligeiramente o botão */
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3); /* Sombra mais intensa */
+}
+
+/* Ícones SVG personalizados */
+.swiper-button-next::after, .swiper-button-prev::after {
+  content: '';
+  width: 24px;
+  height: 24px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* Ícone para o botão "next" */
+.swiper-button-next::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpath d='M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z'/%3E%3C/svg%3E"); /* Ícone de seta para a direita */
+}
+
+/* Ícone para o botão "prev" */
+.swiper-button-prev::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpath d='M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z'/%3E%3C/svg%3E"); /* Ícone de seta para a esquerda */
 }
 
 /* Posicionamento dos botões */
 .swiper-button-next {
-  right: 10px;
+  right: 20px; /* Distância da borda direita */
 }
 
 .swiper-button-prev {
-  left: 10px;
+  left: 20px; /* Distância da borda esquerda */
 }
-
 .swiper-pagination {
   position: absolute;
   bottom: 10px;
