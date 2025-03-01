@@ -68,21 +68,24 @@ main {
 }
 
 .swiper {
-  width: 100%; /* Ocupa toda a largura disponível */
-  max-width: 800px; /* Aumente o tamanho máximo se necessário */
-  position: relative;
-  margin: 0 auto; /* Centraliza o carrossel na página */
+    width: 100%; /* Ocupa toda a largura disponível */
+    max-width: 800px; /* Ajuste conforme necessário */
+    position: relative;
+    margin: 0 auto; /* Centraliza o carrossel na página */
+    overflow: hidden; /* Adicione isso para evitar que o conteúdo vaze */
 }
 
 .swiper-wrapper {
-  display: flex;
+    display: flex;
+    width: 100%; /* Garante que o wrapper ocupe toda a largura */
 }
 
 .swiper-slide {
-  flex: 0 0 100%; /* Cada slide ocupa 100% da largura do contêiner */
-  width: 100%; /* Garante que o slide ocupe toda a largura */
-  display: flex;
-  justify-content: center;
+    flex: 0 0 100%; /* Cada slide ocupa 100% da largura do contêiner */
+    width: 100%; /* Garante que o slide ocupe toda a largura */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centraliza o conteúdo verticalmente */
 }
 
 .product-card {
