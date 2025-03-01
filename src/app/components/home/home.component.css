@@ -126,34 +126,50 @@ main {
   font-size: 1.3rem;
 }
 
-.swiper-button-next, .swiper-button-prev {
-  color: #4a90e2;
-  background: rgba(255, 255, 255, 0.8);
+.swiper-button-next,
+.swiper-button-prev {
+  color: #4a90e2; /* Cor do ícone */
+  background: rgba(255, 255, 255, 0.8); /* Fundo do botão */
   padding: 10px;
-  border-radius: 50%;
+  border-radius: 50%; /* Botão redondo */
   width: 40px;
   height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Sombra */
   position: absolute;
   top: 50%;
+  transform: translateY(-50%); /* Centraliza verticalmente */
   z-index: 10;
   cursor: pointer;
 }
 
-.swiper-button-next::after, .swiper-button-prev::after {
-  font-size: 20px;
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-family: 'swiper-icons'; /* Fonte das setas */
+  font-size: 24px; /* Tamanho da seta */
+  font-weight: bold; /* Espessura da seta */
+  color: #4a90e2; /* Cor da seta */
+}
+
+.swiper-button-next::after {
+  content: 'next'; /* Seta para a direita */
+}
+
+.swiper-button-prev::after {
+  content: 'prev'; /* Seta para a esquerda */
 }
 
 .swiper-button-next {
-  right: 10px;
+  right: 10px; /* Posição do botão "next" */
 }
 
 .swiper-button-prev {
-  left: 10px;
+  left: 10px; /* Posição do botão "prev" */
 }
+
+
 
 .swiper-pagination {
   position: absolute;
