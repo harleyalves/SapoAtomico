@@ -23,24 +23,24 @@ export class HomeComponent implements AfterViewInit {
 
   constructor(@Inject(PLATFORM_ID) private platformId: object) {}
 
-  ngAfterViewInit(): void {
-    if (isPlatformBrowser(this.platformId)) {
-      new Swiper('.swiper', {
-        modules: [Navigation, Pagination],
-        loop: true,
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-        },
-        slidesPerView: 1,
-        spaceBetween: 30,
-      });
-    }
+ngAfterViewInit(): void {
+  if (isPlatformBrowser(this.platformId)) {
+    new Swiper('.swiper', {
+      modules: [Navigation, Pagination],
+      loop: true,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      slidesPerView: 1,  
+      spaceBetween: 0,   
+    });
   }
+}
 
   openModal(imageUrl: string): void {
     this.selectedImage = imageUrl;
