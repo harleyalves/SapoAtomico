@@ -1,0 +1,28 @@
+<section class="form-section">
+    <div class="text">
+        <h3>Mostre seu interesse!</h3>
+        <p>Se você tem interesse de garantir a sua, me manda uma mensagem. Dependendo do interesse, posso encomendar uma nova remessa, já que, no momento, não consigo manter um estoque.</p>
+    </div>
+
+    <!-- Exibir mensagem de sucesso -->
+    @if (formEnviado) {
+        <div class="success-message">
+            Obrigado pelo interesse! Entrarei em contato em breve.
+        </div>
+    }
+
+    @if (!formEnviado) {
+        <form action="https://formsubmit.co/7c3e3fd46b94467c28b857fde264b3c7" method="POST">
+            <input type="hidden" name="_captcha" value="false"> <!-- Desativa captcha -->
+            <input type="hidden" name="_subject" value="Novo Cadastro!"> <!-- Título do email -->
+            <input type="hidden" name="_next" value="http://localhost:4200/">
+            <label for="name">Nome</label>
+            <input id="name" type="text" name="name" placeholder="Digite seu nome" required>
+            
+            <label for="email">Email</label>
+            <input id="email" type="email" name="email" placeholder="Digite seu e-mail" required>
+
+            <button type="submit">Se Inscreva</button>
+        </form>
+    }
+</section>

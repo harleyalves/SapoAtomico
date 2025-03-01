@@ -1,0 +1,6 @@
+.app-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #66d3fa, #d2a4f5);
+}
