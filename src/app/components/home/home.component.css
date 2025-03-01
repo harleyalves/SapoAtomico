@@ -55,9 +55,10 @@ main {
 
 .swiper {
     width: 100%;
-    max-width: 800px; /* Ajuste conforme necessário */
-    margin: 0 auto; /* Centraliza o swiper */
-    overflow: hidden; /* Evita que o conteúdo vaze */
+    max-width: 800px;
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
 }
 
 .swiper-wrapper {
@@ -65,11 +66,10 @@ main {
 }
 
 .swiper-slide {
-    flex: 0 0 100%; /* Cada slide ocupa 100% da largura */
-    width: 100%; /* Garante que o slide ocupe toda a largura */
+    flex: 0 0 100%;
+    width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center; /* Centraliza o conteúdo verticalmente */
 }
 
 .product-card {
@@ -231,20 +231,12 @@ main {
     }
 
     .swiper {
-        max-width: 100%; /* O swiper ocupa toda a largura em telas menores */
-        padding: 0 10px; /* Adiciona um pequeno padding nas laterais */
+        max-width: 100%;
+        padding: 0 10px;
     }
 
     .swiper-slide {
-        flex: 0 0 100%; /* Garante que cada slide ocupe 100% da largura */
-    }
-
-    .swiper-button-next, .swiper-button-prev {
-        display: none; /* Oculta os botões de navegação em telas menores */
-    }
-
-    .swiper-pagination {
-        bottom: 5px; /* Ajusta a posição da paginação */
+        flex: 0 0 100%;
     }
 
     .product-card {
@@ -254,6 +246,14 @@ main {
 
     .product-card img {
         max-height: 200px;
+    }
+
+    .swiper-button-next, .swiper-button-prev {
+        display: none;
+    }
+
+    .swiper-pagination {
+        bottom: 5px;
     }
 
     .shop-now {
