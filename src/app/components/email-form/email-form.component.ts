@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { BtnPrimaryComponent } from '../btn-primary/btn-primary.component';
 @Component({
   selector: 'email-form',
   templateUrl: './email-form.component.html',
