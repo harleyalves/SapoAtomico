@@ -6,6 +6,7 @@ main {
   align-items: center;
   flex-direction: column;
   padding: 20px;
+  flex: 1; 
 }
 
 .main-section {
