@@ -1,12 +1,14 @@
+/* Estilo do footer */
 footer {
-    background: linear-gradient(to right, #66d3fa, #d2a4f5);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: auto;
-    .socials {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-    }
+  background: linear-gradient(to right, #66d3fa, #d2a4f5);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px; /* Adicione padding conforme necessário */
+}
+
+footer .socials {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
