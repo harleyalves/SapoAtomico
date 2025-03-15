@@ -1,5 +1,11 @@
 @import "https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap";
-@import "https://fonts.googleapis.com/css2?family=Soap&display=swap"; /* Link da fonte Soap */
+
+@font-face {
+  font-family: 'Soap';
+  src: url('app/Soap-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 h3 {
   font-family: 'Soap', cursive; /* Fonte Soap para títulos */
