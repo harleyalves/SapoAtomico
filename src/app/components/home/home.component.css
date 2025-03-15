@@ -283,3 +283,28 @@ main {
     min-height: 300px;
   }
 }
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .caneca-details {
+    flex-direction: column; /* Empilha os itens verticalmente */
+    padding: 15px; /* Reduz o padding */
+    max-width: 90%; /* Ajusta a largura máxima */
+  }
+
+  .caneca-images {
+    flex-direction: column; /* Empilha as imagens verticalmente */
+    gap: 10px; /* Reduz o espaçamento entre as imagens */
+  }
+
+  .caneca-images img {
+    width: 100%; /* Ajusta a largura das imagens para 100% */
+    height: auto; /* Mantém a proporção das imagens */
+    max-width: 250px; /* Define um tamanho máximo para as imagens */
+  }
+
+  .close-button {
+    width: 100%; /* Faz o botão ocupar toda a largura */
+    margin-top: 10px; /* Adiciona um espaçamento acima do botão */
+  }
+}
