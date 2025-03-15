@@ -1,34 +1,43 @@
 <section class="form-section">
     <div class="text">
         <h3>Mostre seu interesse!</h3>
-        <p>Se você tem interesse de garantir a sua, me manda uma mensagem. Dependendo do interesse, posso encomendar uma nova remessa, já que, no momento, não consigo manter um estoque.</p>
+        <p>Se você tem interesse em garantir a sua caneca, por favor, preencha os dados ao lado, informando o modelo e a quantidade desejada, juntamente com o número do seu CEP, para que eu possa calcular o valor do frete.
+
+            Por eu ainda não possuir os meios de produção das canecas, o estoque é limitado. Se a caneca estiver disponível, ela será enviada no próximo dia útil após a compra, caso contrário, encomendarei na próxima leva de produção. Mas não se preocupe! Você receberá todas as informações detalhadas por e-mail.</p>
     </div>
 
     <!-- Exibir mensagem de sucesso -->
-    @if (formEnviado) {
+    <div *ngIf="formEnviado">
         <div class="success-message">
             Obrigado pelo interesse! Entrarei em contato em breve.
         </div>
-    }
+    </div>
 
-    @if (!formEnviado) {
+    <div class="formsubmit" *ngIf="!formEnviado">
         <form action="https://formsubmit.co/7c3e3fd46b94467c28b857fde264b3c7" method="POST" (submit)="onSubmit($event)">
             <input type="hidden" name="_captcha" value="false"> <!-- Desativa captcha -->
             <input type="hidden" name="_subject" value="Novo Cadastro!"> <!-- Título do email -->
             <input type="hidden" name="_next" value="http://localhost:4200/">
+            
             <label for="name">Nome</label>
             <input id="name" type="text" name="name" placeholder="Digite seu nome" required>
             
             <label for="email">Email</label>
             <input id="email" type="email" name="email" placeholder="Digite seu e-mail" required>
+            
+            <label for="Caneca">Caneca de Interesse</label>
+            <input id="Caneca" type="text" name="Caneca" placeholder="Digite a caneca que você tem interesse!" required>
+            
+            <label for="CEP">CEP (para cálculo do frete)</label>
+            <input id="CEP" type="text" name="CEP" placeholder="Digite seu CEP" required>
 
-            <!-- Use o componente btn-primary -->
+            <!-- Botão -->
             <btn-primary
-              btn-text="Se Inscreva"
+              btn-text="QUERO MINHA CANECA"
               [loading]="loading"
               [disabled]="formEnviado"
-              (submit)="onSubmit($event)"
-            ></btn-primary>
+              (submit)="onSubmit($event)">
+            </btn-primary>
         </form>
-    }
+    </div>
 </section>

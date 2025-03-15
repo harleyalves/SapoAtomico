@@ -2,7 +2,6 @@
 <main>
   <section class="main-section">
     <div class="headline">
-      <span class="tag">SAPO ATÔMICO</span>
       <p>Pretensa lojinha de produtos inspirados em piadas e reflexões do canal Ateu Informa no Youtube</p>
       <btn-primary btn-text="Comprar"></btn-primary>
     </div>
@@ -10,57 +9,37 @@
     <!-- Carrossel de Produtos -->
     <div class="swiper">
       <div class="swiper-wrapper">
-        <!-- Produto 1 -->
-        <div class="swiper-slide">
-          <div class="product-card">
-            <img ngSrc="caneca1-frente.jpg" alt="Caneca Não Coma Vidro" width="250" height="312" priority (click)="openModal('caneca1-frente.jpg')">
-            <span class="new-tag">Novo</span>
-            <h3>Caneca Não Coma Vidro</h3>
-            <p>Caneca de porcelana Capacidade de 350ml Altura de 9,7cm</p>
-            <span class="price">R$ 29,99</span>
-            <btn-primary btn-text="Comprar"></btn-primary>
+        <!-- Slide para cada caneca -->
+        @for (caneca of canecas; track caneca.nome) {
+          <div class="swiper-slide">
+            <div class="product-card" (click)="showCanecaDetails(caneca)">
+              <img [ngSrc]="caneca.frente" [alt]="caneca.nome" width="300" height="300" priority>
+              <h3>{{ caneca.nome }}</h3>
+              <p>{{ caneca.descricao }}</p>
+              <span class="price">{{ caneca.preco }}</span>
+              <btn-primary btn-text="Comprar"></btn-primary>
+            </div>
           </div>
-        </div>
-        <!-- Produto 2 -->
-        <div class="swiper-slide">
-          <div class="product-card">
-            <img ngSrc="caneca2-frente.jpg" alt="Caneca Buldogue de Engels" width="250" height="312" priority (click)="openModal('caneca2-frente.jpg')">
-            <span class="new-tag">Novo</span>
-            <h3>Caneca Buldogue de Engels</h3>
-            <p>Caneca de porcelana Capacidade de 350ml Altura de 9,7cm.</p>
-            <span class="price">R$ 34,99</span>
-            <btn-primary btn-text="Comprar"></btn-primary>
-          </div>
-        </div>
-        <!-- Produto 3 -->
-        <div class="swiper-slide">
-          <div class="product-card">
-            <img ngSrc="caneca3-frente.jpg" alt="Caneca Mars" width="250" height="312" priority (click)="openModal('caneca3-frente.jpg')">
-            <span class="new-tag">Novo</span>
-            <h3>Caneca Sapo Materialista</h3>
-            <p>Caneca de porcelana Capacidade de 350ml Altura de 9,7cm.</p>
-            <span class="price">R$ 39,99</span>
-            <btn-primary btn-text="Comprar"></btn-primary>
-          </div>
-        </div>
+        }
       </div>
       <!-- Navegação -->
       <div class="swiper-button-next"></div>
       <div class="swiper-button-prev"></div>
-      <div class="swiper-pagination"></div>
     </div>
   </section>
-  <!-- Formulário de Interesse -->
+      <!-- Div oculta com frente e verso da caneca -->
+      @if (showDetails && selectedCaneca) {
+        <div class="caneca-details">
+          <div class="caneca-images">
+            <img [src]="selectedCaneca.frente" alt="Frente da Caneca">
+            <img [src]="selectedCaneca.verso" alt="Verso da Caneca">
+          </div>
+          <button (click)="hideCanecaDetails()" class="close-button">Fechar</button>
+        </div>
+      }
 
-  <!-- Modal para ampliar a imagem -->
-  @if (selectedImage) {
-    <div class="modal">
-      <div class="modal-content">
-        <span class="close" (click)="closeModal()">&times;</span>
-        <img [src]="selectedImage" alt="Imagem ampliada" class="modal-image">
-      </div>
-    </div>
-  }
-  <email-form></email-form>  
-  <app-footer></app-footer>
+  <!-- Formulário de Interesse -->
+  <email-form></email-form>
 </main>
+
+<app-footer></app-footer>

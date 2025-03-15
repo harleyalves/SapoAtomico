@@ -1,18 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
-@import "https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap";
-@import "https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto:wght@400;700;900&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Soap&display=swap"; /* Link da fonte Soap */
 
-
-* {
-    font-family: "Poppins", sans-serif;
+h3 {
+  font-family: 'Soap', cursive; /* Fonte Soap para títulos */
 }
 
 .pad-70 {
-    padding: 0 70px;
+  padding: 0 70px;
 }
-html, body {
-  height: 100%; /* Garante que o body ocupe toda a altura da tela */
-  margin: 0; /* Remove margens padrão */
+body {
   display: flex;
   flex-direction: column; /* Organiza o conteúdo verticalmente */
+  background: linear-gradient(to bottom,  white, rgba(84, 113, 10, 0.7)); /* Degradê do verde para o branco */
+  margin: 0;
+  font-family: 'Lato', sans-serif; /* Fonte Lato */
 }

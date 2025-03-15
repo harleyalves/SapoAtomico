@@ -1,13 +1,16 @@
-/* Estilo do footer */
-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px; /* Adicione padding conforme necessário */
-}
-
-footer .socials {
+footer {  
+  display: flex;  
+  align-items: center;  
+  justify-content: center;  
+  padding: 20px;  
+}  
+.socials {
   display: flex;
   align-items: center;
   gap: 20px;
+}
+
+.icon {
+  width: 100px; /* Ajuste o tamanho dos ícones */
+  height: 100px;
 }

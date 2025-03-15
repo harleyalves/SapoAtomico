@@ -47,11 +47,27 @@ export class HomeComponent implements AfterViewInit {
     }
   }
 
-  openModal(imageUrl: string): void {
-    this.selectedImage = imageUrl;
+  selectedCaneca: { frente: string, verso: string } | null = null;
+  showDetails = false;
+
+  // Lista de canecas com frente e verso
+  canecas = [
+    { frente: 'buldoguefrente.jpg', verso: 'buldogueverso.jpg', nome: 'Caneca Buldogue de Engels', descricao: 'Caneca de porcelana Capacidade de 350ml Altura de 9,7cm.', preco: 'R$ 34,99' },
+    { frente: 'epicurofrente.jpg', verso: 'epicuroverso.jpg', nome: 'Caneca Epicuro', descricao: 'Caneca de porcelana Capacidade de 350ml Altura de 9,7cm.', preco: 'R$ 34,99' },
+    { frente: 'materialismofrente.jpg', verso: 'materialismoverso.jpg', nome: 'Caneca Materialismo Gostoso Demais', descricao: 'Caneca de porcelana Capacidade de 350ml Altura de 9,7cm.', preco: 'R$ 34,99' },
+    { frente: 'vidrofrente.jpg', verso: 'vidroverso.jpg', nome: 'Caneca Não Coma Vidro', descricao: 'Caneca de porcelana Capacidade de 350ml Altura de 9,7cm.', preco: 'R$ 34,99' },
+    { frente: 'vacafrente.jpg', verso: 'vacaverso.jpg', nome: 'Caneca Vaca', descricao: 'Caneca de porcelana Capacidade de 350ml Altura de 9,7cm.', preco: 'R$ 34,99' }
+  ];
+
+  // Método para exibir os detalhes da caneca
+  showCanecaDetails(caneca: { frente: string, verso: string }) {
+    this.selectedCaneca = caneca;
+    this.showDetails = true;
   }
 
-  closeModal(): void {
-    this.selectedImage = null;
+  // Método para ocultar os detalhes da caneca
+  hideCanecaDetails() {
+    this.showDetails = false;
+    this.selectedCaneca = null;
   }
 }
