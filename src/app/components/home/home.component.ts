@@ -70,4 +70,11 @@ export class HomeComponent implements AfterViewInit {
     this.showDetails = false;
     this.selectedCaneca = null;
   }
+  scrollToForm(event: Event) {
+    event.stopPropagation(); // Impede a propagação do evento para o product-card
+    const formElement = document.getElementById('formulario-interesse');
+    if (formElement) {
+      formElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
 }

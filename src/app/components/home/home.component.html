@@ -3,7 +3,7 @@
   <section class="main-section">
     <div class="headline">
       <p>Pretensa lojinha de produtos inspirados em piadas e reflexões do canal Ateu Informa no Youtube</p>
-      <btn-primary btn-text="Comprar"></btn-primary>
+      <btn-primary btn-text="Comprar" (click)="scrollToForm($event)"></btn-primary>
     </div>
 
     <!-- Carrossel de Produtos -->
@@ -17,7 +17,7 @@
               <h3>{{ caneca.nome }}</h3>
               <p>{{ caneca.descricao }}</p>
               <span class="price">{{ caneca.preco }}</span>
-              <btn-primary btn-text="Comprar"></btn-primary>
+              <btn-primary btn-text="Comprar" (click)="scrollToForm($event)"></btn-primary>
             </div>
           </div>
         }
@@ -39,7 +39,7 @@
       }
 
   <!-- Formulário de Interesse -->
-  <email-form></email-form>
+  <email-form id="formulario-interesse"></email-form>
 </main>
 
 <app-footer></app-footer>
